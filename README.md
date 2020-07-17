@@ -3,14 +3,15 @@ defmodule NykMa do
   import Integer, only: [is_odd: 1]
   import System, only: [find_executable: 1]
 
-  def basic_info(:pronounciation), do: "Nick Ma"
-  def basic_info(:aka), do: ~w(MeNyK moenayuki)
-  def tz, do: "Asia/Shanghai"
-  def location, do: tz()
-  def basic_info(:title), do: "DevOps" ++ (if :rand.uniform(2) |> is_odd(), do: " maybe?", else: "")
-  def basic_info(:blog), do: [ zh_CN: "https://nyk.ma" ]
-  def basic_info(:email), do: "aUBueWsubWE=" |> :base64.decode()
-  def basic_info(:editor), do: find_executable("emacs") || find_executable("sed")
+  def basic(:pronoun), do: "Nick Ma"
+  def basic(:aka),     do: ~w(MeNyK moenayuki)
+  def basic(:title),   do: "DevOps" ++ (if :rand.uniform(2) |> is_odd(), do: " maybe?", else: "")
+  def basic(:tz),      do: "Asia/Shanghai"
+  def basic(:geo),     do: basic(:timezone)
+  def basic(:blog),    do: [ zh_CN: "https://nyk.ma" ]
+  def basic(:email),   do: "aUBueWsubWE=" |> :base64.decode()
+  def basic(:editor),  do: find_executable("emacs") || find_executable("sed")
+  def basic(:gpg),     do: "https://keybase.io/nykma/pgp_keys.asc"
 
   def programming_language(:active_use) do
     ~w(elixir ruby php typescript emacslisp dart)a
@@ -24,7 +25,7 @@ defmodule NykMa do
 
   def framework(:active_use) do
     [
-      ops: ~w(docker kubernetes helm)a,
+      ops: ~w(docker kubernetes helm ldap)a,
       elixir: ~w(phoenix ecto)a,
       ruby: ~w(rails sinatra)a,
       php: ~w(laravel)a,
