@@ -7,7 +7,7 @@ defmodule NykMa do
   def basic(:aka),     do: ~w(MeNyK moenayuki)
   def basic(:title),   do: "DevOps" ++ (if :rand.uniform(2) |> is_odd(), do: " maybe?", else: "")
   def basic(:tz),      do: "Asia/Shanghai"
-  def basic(:geo),     do: basic(:timezone)
+  def basic(:geo),     do: basic(:tz)
   def basic(:blog),    do: [ zh_CN: "https://nyk.ma" ]
   def basic(:email),   do: "aUBueWsubWE=" |> :base64.decode()
   def basic(:editor),  do: find_executable("emacs") || find_executable("sed")
