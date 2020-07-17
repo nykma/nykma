@@ -5,20 +5,20 @@ defmodule NykMa do
 
   def basic_info(:pronounciation), do: "Nick Ma"
   def basic_info(:aka), do: ~w(MeNyK moenayuki)
+  def tz, do: "Asia/Shanghai"
+  def location, do: tz()
   def basic_info(:title), do: "DevOps" ++ (if :rand.uniform(2) |> is_odd(), do: " maybe?", else: "")
   def basic_info(:blog), do: [ zh_CN: "https://nyk.ma" ]
   def basic_info(:email), do: "aUBueWsubWE=" |> :base64.decode()
   def basic_info(:editor), do: find_executable("emacs") || find_executable("sed")
 
-  def programming_languages(:active_use) do
+  def programming_language(:active_use) do
     ~w(elixir ruby php typescript emacslisp dart)a
   end
-
-  def programming_languages(:familiar) do
-    ~w(c sql html css)a
+  def programming_language(:familiar) do
+    ~w(python c sql html css)a
   end
-
-  def programming_languages(:know) do
+  def programming_language(:know) do
     ~w(java go rust clojure ocaml)a
   end
 
@@ -31,5 +31,8 @@ defmodule NykMa do
       dart: ~w(flutter)a,
     ]
   end
+
+  def human_language(:active_use), do: ~w(zh_CN en_US ja_JP)a
+  def human_language(:know), do: ~w(de_DE ko_KR)a
 end
 ```
