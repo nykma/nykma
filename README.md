@@ -5,7 +5,7 @@ defmodule NykMa do
 
   def basic_info(:pronounciation), do: "Nick Ma"
   def basic_info(:aka), do: ~w(MeNyK moenayuki)
-  def basic_info(:title, do: "DevOps" ++ (if :rand.uniform(2) |> is_odd(), do: " maybe?", else: "")
+  def basic_info(:title), do: "DevOps" ++ (if :rand.uniform(2) |> is_odd(), do: " maybe?", else: "")
   def basic_info(:blog), do: [ zh_CN: "https://nyk.ma" ]
   def basic_info(:email), do: "aUBueWsubWE=" |> :base64.decode()
   def basic_info(:editor), do: find_executable("emacs") || find_executable("sed")
