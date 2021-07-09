@@ -29,6 +29,7 @@ defmodule NykMa do
       elixir: ~w(phoenix ecto)a,
       ruby: ~w(rails sinatra)a,
       php: ~w(laravel)a,
+      golang: ~w(gin gorm)a,
       dart: ~w(flutter)a,
     ]
   end
