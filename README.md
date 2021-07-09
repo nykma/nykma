@@ -14,13 +14,13 @@ defmodule NykMa do
   def basic(:gpg),     do: "https://keybase.io/nykma/pgp_keys.asc"
 
   def programming_language(:active_use) do
-    ~w(elixir ruby php typescript emacslisp dart)a
+    ~w(elixir ruby php typescript emacslisp golang)a
   end
   def programming_language(:familiar) do
     ~w(python c sql html css)a
   end
   def programming_language(:know) do
-    ~w(java go rust clojure ocaml)a
+    ~w(java rust dart clojure ocaml)a
   end
 
   def framework(:active_use) do
